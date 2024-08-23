@@ -1,0 +1,90 @@
+{
+	"en": {
+		"header": {},
+		"hero": {
+			"hello": ["Hi, I'm", "Max"],
+			"about_me": [
+				"I develop 3D visuals, user",
+				"interfaces and web applications"
+			]
+		},
+		"about": {
+			"introduction": "Introduction",
+			"overwiew": "Overwiew",
+			"description": "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!"
+		},
+		"experience": {
+			"my_path": "My path of development",
+			"work_experience": "Work Experience"
+		},
+		"tech": {},
+		"works": {
+			"my_work": "My work",
+			"projects": "Projects",
+			"description": "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively."
+		},
+		"testimonials": {
+			"what_other_says": "What others say",
+			"testimonials": "Testimonials"
+		},
+		"contact": {
+			"get_in_touch": "Get in touch",
+			"contact": "Contact",
+			"your_name": "Your name",
+			"q_your_name": "What's your name?",
+			"your_email": "Your Email",
+			"q_your_email": "What's your Email?",
+			"your_message": "Your Message",
+			"q_your_message": "What do you want to say?",
+			"send": "Send",
+			"sending": "Sending...",
+			"errors": {
+				"required_field": "This field is required"
+			}
+		}
+	},
+	"ru": {
+		"header": {},
+		"hero": {
+			"hello": ["Привет, я", "Макс"],
+			"about_me": [
+				"Я разрабатываю 3D-визуализации,",
+				"пользовательские интерфейсы и веб-приложения"
+			]
+		},
+		"about": {
+			"introduction": "Введение",
+			"overwiew": "Обзор",
+			"description": "Я опытный разработчик программного обеспечения с опытом работы в TypeScript и JavaScript, а также с экспертными знаниями в таких фреймворках, как React, Node.js и Three.js. Я быстро обучаюсь и тесно сотрудничаю с клиентами для создания эффективных, масштабируемых и удобных решений, которые решают реальные задачи. Давайте работать вместе, чтобы воплотить ваши идеи в жизнь!"
+		},
+		"experience": {
+			"my_path": "Мой путь в разработке",
+			"work_experience": "Опыт работы"
+		},
+		"tech": {},
+		"works": {
+			"my_work": "Мои работы",
+			"projects": "Проекты",
+			"description": "Следующие проекты демонстрируют мои навыки и опыт через реальные примеры моей работы. Каждый проект кратко описан с ссылками на кодовые репозитории и живые демонстрации. Это отражает мою способность решать сложные задачи, работать с различными технологиями и эффективно управлять проектами."
+		},
+		"testimonials": {
+			"what_other_says": "Что говорят другие",
+			"testimonials": "Отзывы"
+		},
+		"contact": {
+			"get_in_touch": "Связаться",
+			"contact": "Контакт",
+			"your_name": "Ваше имя",
+			"q_your_name": "Как вас зовут?",
+			"your_email": "Ваш Email",
+			"q_your_email": "Какой у вас Email?",
+			"your_message": "Ваше сообщение",
+			"q_your_message": "Ваше сообщение",
+			"send": "Отправить",
+			"sending": "Отправка...",
+			"errors": {
+				"required_field": "Это поле должно быть заполнено"
+			}
+		}
+	}
+}
