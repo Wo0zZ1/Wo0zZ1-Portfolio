@@ -25,7 +25,7 @@ const ExperienceCard: FC<IExperience> = memo(
 					color: '#ffffff',
 				}}
 				contentArrowStyle={{ borderRight: '7px solid #232631' }}
-				date={date}
+				date={date[lang]}
 				icon={
 					<div className='flex h-full w-full items-center justify-center'>
 						<img

@@ -8,7 +8,7 @@ const SectionWrapper = (Component: FC, idName: string): FC => {
 	const HOC: FC = memo(() => {
 		return (
 			<motion.section
-				variants={staggerContainer('', 0)}
+				variants={staggerContainer(0, 0)}
 				initial='hidden'
 				whileInView='show'
 				viewport={{ once: true, amount: 0.25 }}

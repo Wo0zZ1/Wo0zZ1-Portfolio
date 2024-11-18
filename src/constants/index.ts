@@ -1,7 +1,6 @@
 import {
 	mobile,
 	backend,
-	creator,
 	web,
 	javascript,
 	typescript,
@@ -14,15 +13,10 @@ import {
 	mongodb,
 	git,
 	figma,
-	docker,
-	meta,
-	starbucks,
-	tesla,
-	shopify,
-	carrent,
-	jobit,
-	tripguide,
 	threejs,
+	fullstack,
+	notes,
+	define_limit,
 } from '../assets'
 
 import { itemForLang } from '../types'
@@ -43,9 +37,9 @@ const navLinks: INavLink[] = [
 		},
 	},
 	{
-		id: 'work',
+		id: 'works',
 		title: {
-			en: 'Work',
+			en: 'Works',
 			ru: 'Проекты',
 		},
 	},
@@ -75,8 +69,8 @@ const services: IService[] = [
 	},
 	{
 		title: {
-			en: 'React Native Developer',
-			ru: 'React Native Разработчик',
+			en: 'React Developer',
+			ru: 'React Разработчик',
 		},
 		icon: mobile,
 	},
@@ -87,13 +81,6 @@ const services: IService[] = [
 		},
 		icon: backend,
 	},
-	{
-		title: {
-			en: 'Content Creator',
-			ru: 'Контент-мейкер',
-		},
-		icon: creator,
-	},
 ]
 
 // Experience section
@@ -103,76 +90,73 @@ interface IExperience {
 	company_name: string
 	icon: string
 	iconBg: string
-	date: string
+	date: itemForLang<string>
 	points: itemForLang<string>[]
 }
 
 const experiences: IExperience[] = [
 	{
 		title: {
+			en: 'HTML/CSS Developer',
+			ru: 'HTML/CSS Верстальщик',
+		},
+		company_name: '',
+		icon: html,
+		iconBg: '#E6DEDD',
+		date: {
+			en: 'June 2021 - August 2021',
+			ru: 'Июнь 2021 - Август 2021',
+		},
+		points: [
+			{
+				en: 'Creating responsive and accessible web pages using HTML5, CSS3, and JavaScript.',
+				ru: 'Создание отзывчивых и доступных веб-страниц с использованием HTML5, CSS3 и JavaScript.',
+			},
+			{
+				en: 'Utilizing preprocessors such as SASS or LESS to streamline stylesheet development.',
+				ru: 'Использование препроцессоров, таких как SASS или LESS, для оптимизации разработки таблиц стилей.',
+			},
+		],
+	},
+	{
+		title: {
+			en: 'Node.js Developer',
+			ru: 'Node.js Разработчик',
+		},
+		company_name: '',
+		icon: nodejs,
+		iconBg: '#E6DEDD',
+		date: {
+			en: 'September 2021 - December 2021',
+			ru: 'Сентябрь 2021 - Декабрь 2021',
+		},
+		points: [
+			{
+				en: 'Designing and implementing RESTful APIs using Express.js.',
+				ru: 'Проектирование и реализация RESTful API с использованием Express.js.',
+			},
+			{
+				en: 'Building scalable backend systems using Node.js and MongoDB.',
+				ru: 'Создание масштабируемых бэкенд-систем с использованием Node.js и MongoDB.',
+			},
+			{
+				en: 'Optimizing application performance through caching and load balancing techniques.',
+				ru: 'Оптимизация производительности приложения с помощью кэширования и балансировки нагрузки.',
+			},
+		],
+	},
+	{
+		title: {
 			en: 'React.js Developer',
 			ru: 'React.js Разработчик',
 		},
-		company_name: 'Starbucks',
-		icon: starbucks,
-		iconBg: '#383E56',
-		date: 'Март 2020 - Апрель 2021',
-		points: [
-			{
-				en: 'Developing and maintaining web applications using React.js and other related technologies.',
-				ru: 'Разработка и поддержка веб-приложений с использованием React.js и других связанных технологий.',
-			},
-			{
-				en: 'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				ru: 'Сотрудничество с межфункциональными командами, включая дизайнеров, менеджеров по продуктам и других разработчиков, для создания высококачественных продуктов.',
-			},
-			{
-				en: 'Implementing responsive design and ensuring cross-browser compatibility.',
-				ru: 'Реализация адаптивного дизайна и обеспечение совместимости с различными браузерами.',
-			},
-			{
-				en: 'Participating in code reviews and providing constructive feedback to other developers.',
-				ru: 'Участие в ревью кода и предоставление конструктивной обратной связи другим разработчикам.',
-			},
-		],
-	},
-	{
-		title: {
-			en: 'React Native Developer',
-			ru: 'React Native Разработчик',
-		},
-		company_name: 'Tesla',
-		icon: tesla,
+		company_name: '',
+		icon: reactjs,
 		iconBg: '#E6DEDD',
-		date: 'Январь 2021 - Февраль 2022',
-		points: [
-			{
-				en: 'Developing and maintaining web applications using React.js and other related technologies.',
-				ru: 'Разработка и поддержка веб-приложений с использованием React.js и других связанных технологий.',
-			},
-			{
-				en: 'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				ru: 'Сотрудничество с межфункциональными командами, включая дизайнеров, менеджеров по продукту и других разработчиков, для создания высококачественных продуктов.',
-			},
-			{
-				en: 'Implementing responsive design and ensuring cross-browser compatibility.',
-				ru: 'Реализация адаптивного дизайна и обеспечение кроссбраузерной совместимости.',
-			},
-			{
-				en: 'Participating in code reviews and providing constructive feedback to other developers.',
-				ru: 'Участие в код-ревью и предоставление конструктивной обратной связи другим разработчикам.',
-			},
-		],
-	},
-	{
-		title: {
-			en: 'Web Developer',
-			ru: 'Веб-разработчик',
+		date: {
+			en: 'Июль 2021 - Июль 2023',
+			ru: 'July 2021 - July 2023',
 		},
-		company_name: 'Shopify',
-		icon: shopify,
-		iconBg: '#383E56',
-		date: 'Январь 2022 - Январь 2023',
 		points: [
 			{
 				en: 'Developing and maintaining web applications using React.js and other related technologies.',
@@ -184,39 +168,34 @@ const experiences: IExperience[] = [
 			},
 			{
 				en: 'Implementing responsive design and ensuring cross-browser compatibility.',
-				ru: 'Реализация адаптивного дизайна и обеспечение совместимости с различными браузерами.',
-			},
-			{
-				en: 'Participating in code reviews and providing constructive feedback to other developers.',
-				ru: 'Участие в код-ревью и предоставление конструктивной обратной связи другим разработчикам.',
+				ru: 'Реализация адаптивного дизайна и обеспечение кроссбраузерной совместимости.',
 			},
 		],
 	},
 	{
 		title: {
-			en: 'Full stack Developer',
-			ru: 'Full stack разработчик',
+			en: 'Fullstack Developer',
+			ru: 'Fullstack разработчик',
 		},
-		company_name: 'Meta',
-		icon: meta,
+		company_name: '',
+		icon: fullstack,
 		iconBg: '#E6DEDD',
-		date: 'Январь 2023 - Сейчас',
+		date: {
+			en: 'October 2024 - Now',
+			ru: 'Октябрь 2024 - Сейчас',
+		},
 		points: [
 			{
-				en: 'Developing and maintaining web applications using React.js and other related technologies.',
-				ru: 'Разработка и поддержка веб-приложений с использованием React.js и других связанных технологий.',
+				en: 'Developing full-stack web applications from concept to deployment.',
+				ru: 'Разработка полнофункциональных веб-приложений от концепции до развертывания.',
 			},
 			{
-				en: 'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				ru: 'Сотрудничество с кросс-функциональными командами, включая дизайнеров, менеджеров по продуктам и других разработчиков для создания высококачественных продуктов.',
+				en: 'Building user interfaces with modern frontend technologies like React.js.',
+				ru: 'Создание пользовательских интерфейсов с использованием современных фронтенд-технологий, таких как React.js.',
 			},
 			{
-				en: 'Implementing responsive design and ensuring cross-browser compatibility.',
-				ru: 'Внедрение адаптивного дизайна и обеспечение кроссбраузерной совместимости.',
-			},
-			{
-				en: 'Participating in code reviews and providing constructive feedback to other developers.',
-				ru: 'Участие в ревью кода и предоставление конструктивной обратной связи другим разработчикам.',
+				en: 'Designing and implementing robust backend services using Node.js.',
+				ru: 'Проектирование и реализация надежных бэкенд-сервисов с использованием Node.js.',
 			},
 		],
 	},
@@ -278,10 +257,6 @@ const technologies: ITechnology[] = [
 		name: 'figma',
 		icon: figma,
 	},
-	{
-		name: 'docker',
-		icon: docker,
-	},
 ]
 
 // Works section
@@ -297,14 +272,15 @@ interface IProject {
 	tags: ITag[]
 	image: string
 	source_code_link: string
+	site_link: string
 }
 
 const projects: IProject[] = [
 	{
-		name: 'Car Rent',
+		name: 'Notes',
 		description: {
-			en: 'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
-			ru: 'Веб-платформа, которая позволяет пользователям искать, бронировать и управлять арендами автомобилей от различных поставщиков, предлагая удобное и эффективное решение для транспортных потребностей.',
+			en: 'A simple yet powerful web-based task management app that helps users organize their tasks and boost productivity.',
+			ru: 'Простое, но мощное веб-приложение для управления задачами, которое помогает пользователям организовать свои задачи и повысить производительность.',
 		},
 		tags: [
 			{
@@ -312,7 +288,27 @@ const projects: IProject[] = [
 				color: 'blue-text-gradient',
 			},
 			{
-				name: 'mongodb',
+				name: 'scss',
+				color: 'pink-text-gradient',
+			},
+		],
+		image: notes,
+		source_code_link: 'https://github.com/Wo0zZ1/notes',
+		site_link: 'https://notes-wo0zz1.vercel.app/',
+	},
+	{
+		name: 'Define Limit',
+		description: {
+			en: 'An educational web application designed to help students understand and practice writing definitions for limits in mathematics.',
+			ru: 'Образовательное веб-приложение, предназначенное для помощи студентам в изучении и практике написания определений для пределов в математике.',
+		},
+		tags: [
+			{
+				name: 'TypeScript',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'LaTeX',
 				color: 'green-text-gradient',
 			},
 			{
@@ -320,55 +316,34 @@ const projects: IProject[] = [
 				color: 'pink-text-gradient',
 			},
 		],
-		image: carrent,
-		source_code_link: 'https://github.com/',
+		image: define_limit,
+		source_code_link: 'https://github.com/Wo0zZ1/define-limit',
+		site_link: 'https://define-limit.vercel.app/',
 	},
-	{
-		name: 'Job IT',
-		description: {
-			en: 'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
-			ru: 'Веб-приложение, которое позволяет пользователям искать вакансии, просматривать предполагаемые диапазоны зарплат для должностей и находить доступные работы в зависимости от их текущего местоположения.',
-		},
-		tags: [
-			{
-				name: 'react',
-				color: 'blue-text-gradient',
-			},
-			{
-				name: 'restapi',
-				color: 'green-text-gradient',
-			},
-			{
-				name: 'scss',
-				color: 'pink-text-gradient',
-			},
-		],
-		image: jobit,
-		source_code_link: 'https://github.com/',
-	},
-	{
-		name: 'Trip Guide',
-		description: {
-			en: 'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
-			ru: 'Всеобъемлющая платформа для бронирования путешествий, которая позволяет пользователям бронировать рейсы, отели и аренду автомобилей, а также предлагает тщательно подобранные рекомендации по популярным направлениям.',
-		},
-		tags: [
-			{
-				name: 'nextjs',
-				color: 'blue-text-gradient',
-			},
-			{
-				name: 'supabase',
-				color: 'green-text-gradient',
-			},
-			{
-				name: 'css',
-				color: 'pink-text-gradient',
-			},
-		],
-		image: tripguide,
-		source_code_link: 'https://github.com/',
-	},
+	// {
+	// 	name: 'Trip Guide',
+	// 	description: {
+	// 		en: 'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+	// 		ru: 'Всеобъемлющая платформа для бронирования путешествий, которая позволяет пользователям бронировать рейсы, отели и аренду автомобилей, а также предлагает тщательно подобранные рекомендации по популярным направлениям.',
+	// 	},
+	// 	tags: [
+	// 		{
+	// 			name: 'nextjs',
+	// 			color: 'blue-text-gradient',
+	// 		},
+	// 		{
+	// 			name: 'supabase',
+	// 			color: 'green-text-gradient',
+	// 		},
+	// 		{
+	// 			name: 'css',
+	// 			color: 'pink-text-gradient',
+	// 		},
+	// 	],
+	// 	image: tripguide,
+	// 	source_code_link: 'https://github.com/Wo0zZ1/define-limit',
+	// 	site_link: 'https://define-limit.vercel.app/',
+	// },
 ]
 
 // Feedbacks section

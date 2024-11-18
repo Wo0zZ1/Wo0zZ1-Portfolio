@@ -1,10 +1,4 @@
-import {
-	createContext,
-	useEffect,
-	useState,
-	FC,
-	memo,
-} from 'react'
+import { createContext, useEffect, useState, FC } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import type {

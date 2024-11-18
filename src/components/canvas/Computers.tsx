@@ -15,7 +15,9 @@ const Computers: FC = memo(() => {
 
 	// TODOD create hook useWidth
 	useEffect(() => {
-		const resizeHandler = e => setWidth(e.target.innerWidth)
+		const resizeHandler = (e: UIEvent) =>
+			e.target instanceof Window && setWidth(e.target.innerWidth)
+
 		addEventListener('resize', resizeHandler)
 
 		return () => {

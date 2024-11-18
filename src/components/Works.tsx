@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 import { SectionWrapper } from '../hocs'
 
-import { github, git } from '../assets'
+import { github } from '../assets'
 
 import { projects } from '../constants'
 import { IProject } from '../constants'
@@ -14,6 +14,7 @@ import useLang from '../hooks/useLang'
 import { fadeIn, textVariant } from '../utils/motion'
 
 import { styles } from '../styles'
+import { Link } from 'react-router-dom'
 
 const ProjectCard: FC<IProject & { index: number }> = memo(
 	({
@@ -23,6 +24,7 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 		tags,
 		image,
 		source_code_link,
+		site_link,
 	}) => {
 		const { lang } = useLang()
 
@@ -40,24 +42,19 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 						className='w-full rounded-2xl bg-tertiary p-5 shadow-card sm:w-[360px]'>
 						{/* TODO edit hover effect */}
 						<div className='relative h-[230px] w-full transition hover:contrast-75'>
-							<img
-								src={image}
-								alt={name}
-								className='h-full w-full rounded-2xl object-cover'
-							/>
+							<Link
+								className='z-50 h-full w-full cursor-pointer rounded-2xl'
+								to={site_link}
+								target='_blank'>
+								<img
+									src={image}
+									alt={name}
+									className='h-full w-full rounded-2xl object-cover'
+								/>
+							</Link>
 
-							<div className='card-img_hover absolute inset-0 m-3 flex justify-end gap-1'>
-								<div
-									onClick={() =>
-										window.open(source_code_link, '_blank')
-									}
-									className='black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition hover:scale-110'>
-									<img
-										src={git}
-										alt='git'
-										className='h-1/2 w-1/2 object-contain'
-									/>
-								</div>
+							<div className='card-img_hover absolute top-0 right-0 m-3 flex justify-end gap-1'>
+								{/* TODO use map */}
 								<div
 									onClick={() =>
 										window.open(source_code_link, '_blank')
