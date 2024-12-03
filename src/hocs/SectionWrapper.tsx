@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
-import { staggerContainer } from '../utils/motion'
+import { staggerContainer } from '../utils'
 
 const SectionWrapper = (Component: FC, idName: string): FC => {
 	const HOC: FC = memo(() => {

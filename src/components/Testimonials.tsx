@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
 import { SectionWrapper } from '../hocs'
-import { fadeIn, textVariant } from '../utils/motion'
+import { fadeIn, textVariant } from '../utils'
 
 import { ITestimonial, testimonials } from '../constants'
 import { FC, memo } from 'react'

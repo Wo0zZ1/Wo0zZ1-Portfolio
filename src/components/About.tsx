@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
 import { IService, services } from '../constants'
-import { fadeIn, textVariant } from '../utils/motion'
+import { fadeIn, textVariant } from '../utils/'
 
 import { SectionWrapper } from '../hocs'
 import useLang from '../hooks/useLang'

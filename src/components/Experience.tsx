@@ -9,7 +9,7 @@ import 'react-vertical-timeline-component/style.min.css'
 
 import { experiences, IExperience } from '../constants'
 import { SectionWrapper } from '../hocs'
-import { textVariant } from '../utils/motion'
+import { textVariant } from '../utils'
 
 import { styles } from '../styles'
 import useLang from '../hooks/useLang'

@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 
 import { EarthCanvas } from './canvas'
-import { slideIn } from '../utils/motion'
+import { slideIn } from '../utils'
 import { SectionWrapper } from '../hocs'
 
 import useLang from '../hooks/useLang'

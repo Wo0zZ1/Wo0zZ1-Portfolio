@@ -12,6 +12,7 @@ import { MainLayout } from './layouts'
 import { Main } from './pages'
 
 import './index.scss'
+import { db } from './utils'
 
 export const LangContext = createContext<
 	ILangContext | undefined
@@ -26,11 +27,13 @@ const App: FC = () => {
 	const [lang, setLang] = useState<AllowedLangs>('en')
 
 	useEffect(() => {
+		db.post('/log')
+	}, [])
+
+	useEffect(() => {
 		const htmlStyles = document.documentElement.classList
 		if (theme === 'dark') htmlStyles.add(theme)
 		else htmlStyles.remove('dark')
-
-		return () => {}
 	}, [theme])
 
 	return (

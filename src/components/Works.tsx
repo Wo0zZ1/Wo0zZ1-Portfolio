@@ -11,7 +11,7 @@ import { IProject } from '../constants'
 
 import useLang from '../hooks/useLang'
 
-import { fadeIn, textVariant } from '../utils/motion'
+import { fadeIn, textVariant } from '../utils'
 
 import { styles } from '../styles'
 import { Link } from 'react-router-dom'
