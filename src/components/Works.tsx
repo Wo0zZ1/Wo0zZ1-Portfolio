@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 import { SectionWrapper } from '../hocs'
 
-import { github } from '../assets'
+import github from '../assets/github.png'
 
 import { projects } from '../constants'
 import { IProject } from '../constants'

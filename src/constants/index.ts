@@ -1,23 +1,21 @@
-import {
-	mobile,
-	backend,
-	web,
-	javascript,
-	typescript,
-	html,
-	css,
-	reactjs,
-	redux,
-	tailwind,
-	nodejs,
-	mongodb,
-	git,
-	figma,
-	threejs,
-	fullstack,
-	notes,
-	define_limit,
-} from '../assets'
+import mobile from '../assets/mobile.png'
+import backend from '../assets/backend.png'
+import web from '../assets/web.png'
+import javascript from '../assets/tech/javascript.png'
+import typescript from '../assets/tech/typescript.png'
+import html from '../assets/tech/html.png'
+import css from '../assets/tech/css.png'
+import reactjs from '../assets/tech/reactjs.png'
+import redux from '../assets/tech/redux.png'
+import tailwind from '../assets/tech/tailwind.png'
+import nodejs from '../assets/tech/nodejs.png'
+import mongodb from '../assets/tech/mongodb.png'
+import git from '../assets/tech/git.png'
+import figma from '../assets/tech/figma.png'
+import threejs from '../assets/tech/threejs.svg'
+import fullstack from '../assets/company/fullstack.png'
+import notes from '../assets/projects/notes.jpg'
+import define_limit from '../assets/projects/define-limit.png'
 
 import { itemForLang } from '../types'
 
@@ -389,21 +387,6 @@ const testimonials: ITestimonial[] = [
 	},
 ]
 
-export {
-	navLinks,
-	services,
-	technologies,
-	experiences,
-	testimonials,
-	projects,
-}
+export { navLinks, services, technologies, experiences, testimonials, projects }
 
-export type {
-	INavLink,
-	IService,
-	IExperience,
-	ITechnology,
-	ITag,
-	IProject,
-	ITestimonial,
-}
+export type { INavLink, IService, IExperience, ITechnology, ITag, IProject, ITestimonial }

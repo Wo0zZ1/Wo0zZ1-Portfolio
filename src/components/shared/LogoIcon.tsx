@@ -1,15 +1,9 @@
 import { FC, memo } from 'react'
 
-import { logo } from '../../assets'
+import logo from '../../assets/logo.svg'
 
 const LogoIcon: FC = memo(() => {
-	return (
-		<img
-			className='h-9 w-9 object-contain'
-			src={logo}
-			alt='logo'
-		/>
-	)
+	return <img className='h-9 w-9 object-contain' src={logo} alt='logo' />
 })
 
 export default LogoIcon
