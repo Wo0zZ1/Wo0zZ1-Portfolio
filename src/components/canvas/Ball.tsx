@@ -1,12 +1,6 @@
 import { FC, memo, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import {
-	Decal,
-	Float,
-	OrbitControls,
-	Preload,
-	useTexture,
-} from '@react-three/drei'
+import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
 const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
@@ -14,17 +8,13 @@ const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
 
 	return (
 		<>
-			<Float
-				speed={5}
-				autoInvalidate={true}
-				rotationIntensity={1}
-				floatIntensity={1}>
+			<Float speed={5} autoInvalidate={true} rotationIntensity={1} floatIntensity={1}>
 				<ambientLight intensity={0.25} />
 				<directionalLight position={[0, 0, 0.05]} />
 				<mesh castShadow receiveShadow scale={2.75}>
 					<icosahedronGeometry args={[1, 1]} />
 					<meshStandardMaterial
-						color='#fff8eb'
+						color='var(--color-mesh)'
 						polygonOffset
 						polygonOffsetFactor={-5}
 						flatShading
@@ -43,9 +33,7 @@ const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
 
 const BallCanvas: FC<{ icon: string }> = memo(({ icon }) => {
 	return (
-		<Canvas
-			frameloop='demand'
-			gl={{ preserveDrawingBuffer: true }}>
+		<Canvas frameloop='demand' gl={{ preserveDrawingBuffer: true }}>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls enablePan={false} enableZoom={false} />
 				<Ball imgUrl={icon} />

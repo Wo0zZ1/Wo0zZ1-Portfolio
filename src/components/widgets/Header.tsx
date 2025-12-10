@@ -2,13 +2,13 @@ import { FC, memo } from 'react'
 import Hero from '../Hero'
 import Navbar from '../Navbar'
 
-const Header: FC = memo(() => {
+export const Header: FC = memo(() => {
 	return (
-		<div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+		<div
+			className='bg-cover bg-no-repeat bg-center'
+			style={{ backgroundImage: 'var(--bg-hero)' }}>
 			<Navbar />
 			<Hero />
 		</div>
 	)
 })
-
-export default Header

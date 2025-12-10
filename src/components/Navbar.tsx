@@ -6,7 +6,7 @@ import { menu, close } from '../assets'
 import { ChangeTheme, ChangeLanguage } from './features/'
 import { LogoWithText } from './entites'
 
-import useLang from '../hooks/useLang'
+import { useLang } from '../hooks'
 
 import { styles } from '../styles'
 
@@ -33,10 +33,7 @@ const Navbar: FC = memo(() => {
 			className={`${styles.paddingX} fixed top-0 z-20 flex w-full items-center bg-primary py-5`}>
 			<div className='mx-auto flex w-full max-w-7xl items-center justify-between'>
 				{/* Logo */}
-				<Link
-					to='/'
-					className='flex items-center gap-2'
-					onClick={onLogoClick}>
+				<Link to='/' className='flex items-center gap-2' onClick={onLogoClick}>
 					<LogoWithText />
 				</Link>
 
@@ -53,9 +50,7 @@ const Navbar: FC = memo(() => {
 							<li
 								key={link.id}
 								className={`${
-									active === link.title[lang]
-										? 'text-white'
-										: 'text-secondary'
+									active === link.title[lang] ? 'text-white' : 'text-secondary'
 								} cursor-pointer text-[18px] font-medium hover:text-white`}
 								onClick={() => onNavClick(link.title.en)}>
 								<a href={`#${link.id}`}>{link.title[lang]}</a>
@@ -81,9 +76,7 @@ const Navbar: FC = memo(() => {
 								<li
 									key={link.id}
 									className={`${
-										active === link.title[lang]
-											? 'text-white'
-											: 'text-secondary'
+										active === link.title[lang] ? 'text-white' : 'text-secondary'
 									} font-poppins cursor-pointer text-[16px] font-medium`}
 									onClick={() => {
 										setActive(link.title[lang])

@@ -1,14 +1,12 @@
-/// <reference types="vite-plugin-svgr/client" />
-import { FC, memo } from 'react'
 import Theme from '../../assets/theme.svg?react'
-import useTheme from '../../hooks/useTheme'
+import { FC, memo } from 'react'
+import { useTheme } from '../../hooks'
 
-// TODO MAKE THEME MANAGER
 const ChangeTheme: FC = memo(() => {
 	const { theme, setTheme } = useTheme()
 
 	const changeThemeHandler = () => {
-		if (theme == 'dark') setTheme('light')
+		if (theme === 'dark') setTheme('light')
 		else setTheme('dark')
 	}
 
@@ -16,7 +14,7 @@ const ChangeTheme: FC = memo(() => {
 		<div
 			onClick={changeThemeHandler}
 			className='p-0.5 cursor-pointer hover:bg-slate-500/30 rounded'>
-			<Theme className='size-8' style={{ color: 'white' }} />
+			<Theme className='size-8' style={{ color: 'var(--icon-color)' }} />
 		</div>
 	)
 })

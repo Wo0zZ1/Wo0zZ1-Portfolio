@@ -5,7 +5,7 @@ import { ComputersCanvas } from './canvas'
 
 import { Pin, ScrollTo } from './shared'
 
-import useLang from '../hooks/useLang'
+import { useLang } from '../hooks'
 
 import { styles } from '../styles'
 
@@ -27,14 +27,13 @@ const Hero: FC = memo(() => {
 					transition={{
 						duration: 1,
 					}}>
-					<h1 className={styles.heroHeadText}>
+					<h1 className={`${styles.heroHeadText} text-text-heading`}>
 						{translations[lang].hero.hello[0]}&nbsp;
-						<span className='text-[#915eff]'>
-							{translations[lang].hero.hello[1]}
-						</span>
+						<span className='text-text-heading'>{translations[lang].hero.hello[1]}</span>
 					</h1>
 					<p
-						className={`${styles.heroSubText} mt-2 text-white-100`}>
+						className={`${styles.heroSubText} hero-subtitle mt-2`}
+						style={{ color: 'var(--text-hero-subtitle)' }}>
 						{translations[lang].hero.about_me[0]}
 						<br className='hidden sm:block' />
 						{translations[lang].hero.about_me[1]}

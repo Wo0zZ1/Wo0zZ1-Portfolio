@@ -1,0 +1,134 @@
+:root {
+	/* DARK THEME (default) */
+	--color-primary: #050816;
+	--color-secondary: #aaa6c3;
+	--color-tertiary: #151030;
+
+	--black-100: #100d25;
+	--black-200: #090325;
+	--white-100: #f3f3f3;
+
+	--shadow-card: 0px 35px 120px -15px #211e35;
+
+	--color-accent-purple: #915eff;
+	--color-accent-violet: #804dee;
+	--color-accent-cyan: #00cea8;
+	--color-accent-magenta: #bf61ff;
+	--color-accent-pink: #f272c8;
+
+	--text-primary: #ffffff;
+	--text-secondary: #aaa6c3;
+	--text-hero-subtitle: #dfd9ff;
+	--text-loader: #f1f1f1;
+	--text-error: #dc2626;
+
+	--bg-hero: url('/src/assets/herobg.png');
+	--bg-timeline-card: #1d1836;
+	--bg-timeline-arrow: #232631;
+	--bg-timeline-line: white;
+	--bg-tag-hover: rgba(71, 85, 105, 0.5);
+	--bg-tag: rgba(71, 85, 105, 0.3);
+	--bg-testimonials-header: #151030;
+	--bg-input: #151030;
+	--btn-send: #151030;
+	--btn-send-hover: #120e29;
+	--btn-send-text: #ffffff;
+
+	--gradient-black-start: #000000;
+	--gradient-black-end: #434343;
+	--gradient-violet-start: #804dee;
+	--gradient-violet-end: rgba(60, 51, 80, 0);
+	--gradient-cyan-start: #00cea8;
+	--gradient-magenta-end: #bf61ff;
+
+	--gradient-orange-start: #f12711;
+	--gradient-orange-end: #f5af19;
+	--gradient-green-start: #11998e;
+	--gradient-green-end: #38ef7d;
+	--gradient-blue-start: #2f80ed;
+	--gradient-blue-end: #56ccf2;
+	--gradient-pink-start: #ec008c;
+	--gradient-pink-end: #fc6767;
+
+	--color-mesh: #fff8eb;
+
+	--loader-color: #ffffff;
+	--loader-shadow-light: rgba(255, 255, 255, 0.2);
+	--loader-shadow-medium: rgba(255, 255, 255, 0.5);
+	--loader-shadow-dark: rgba(255, 255, 255, 0.7);
+
+	--text-on-card: #ffffff;
+	--text-heading: #ffffff;
+	--icon-color: #ffffff;
+
+	--card-bg: #151030;
+	--card-border: transparent;
+	--card-glow: 0px 35px 120px -15px #211e35;
+}
+
+:root.light {
+	/* LIGHT THEME */
+	--color-primary: #f8fafc;
+	--color-secondary: #64748b;
+	--color-tertiary: #1a1443;
+
+	--black-100: #ffffff;
+	--black-200: #f1f5f9;
+	--white-100: #0f172a;
+
+	--shadow-card: 0px 10px 40px -10px rgba(100, 116, 139, 0.2);
+
+	--color-accent-purple: #8b5cf6;
+	--color-accent-violet: #7c3aed;
+	--color-accent-cyan: #06b6d4;
+	--color-accent-magenta: #a855f7;
+	--color-accent-pink: #ec4899;
+
+	--text-primary: #151030;
+	--text-secondary: #64748b;
+	--text-hero-subtitle: #475569;
+	--text-loader: #151030;
+	--text-error: #dc2626;
+	--text-on-card: #1c2b50;
+	--text-heading: #1c2b50;
+	--icon-color: #151030;
+
+	--bg-hero: url('/src/assets/herobg-light.png');
+	--bg-timeline-card: #ffffff;
+	--bg-timeline-arrow: #cbd5e1;
+	--bg-timeline-line: #1c2b50c0;
+	--bg-tag-hover: rgba(148, 163, 184, 0.25);
+	--bg-tag: rgba(203, 213, 225, 0.4);
+	--bg-testimonials-header: #ffffff;
+	--bg-input: #f1f5f9;
+	--btn-send: #1c2b50;
+	--btn-send-hover: #0f172a;
+	--btn-send-text: #ffffff;
+
+	--gradient-black-start: #475569;
+	--gradient-black-end: #cbd5e1;
+	--gradient-violet-start: #8b5cf6;
+	--gradient-violet-end: rgba(139, 92, 246, 0);
+	--gradient-cyan-start: #06b6d4;
+	--gradient-magenta-end: #a855f7;
+
+	--gradient-orange-start: #f97316;
+	--gradient-orange-end: #fbbf24;
+	--gradient-green-start: #10b981;
+	--gradient-green-end: #34d399;
+	--gradient-blue-start: #3b82f6;
+	--gradient-blue-end: #60a5fa;
+	--gradient-pink-start: #ec4899;
+	--gradient-pink-end: #f472b6;
+
+	--color-mesh: #475569;
+
+	--loader-color: #0f172a;
+	--loader-shadow-light: rgba(15, 23, 42, 0.15);
+	--loader-shadow-medium: rgba(15, 23, 42, 0.4);
+	--loader-shadow-dark: rgba(15, 23, 42, 0.6);
+
+	--card-bg: #ffffff;
+	--card-border: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+	--card-glow: 0px 8px 32px -8px rgba(139, 92, 246, 0.3);
+}

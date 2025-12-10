@@ -7,39 +7,35 @@ import { IService, services } from '../constants'
 import { fadeIn, textVariant } from '../utils/'
 
 import { SectionWrapper } from '../hocs'
-import useLang from '../hooks/useLang'
+import { useLang } from '../hooks'
 
-const ServiceCard: FC<IService & { index: number }> = memo(
-	({ index, title, icon }) => {
-		const { lang } = useLang()
+const ServiceCard: FC<IService & { index: number }> = memo(({ index, title, icon }) => {
+	const { lang } = useLang()
 
-		return (
-			<Tilt
-				options={{
-					max: 35,
-					scale: 1.05,
-					speed: 450,
-					reverse: true,
-				}}
-				className='w-full xs:w-[250px]'>
-				<motion.div
-					variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
-					className='green-pink-gradient w-full rounded-[20px] p-[1px] shadow-card'>
-					<div className='flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] bg-tertiary px-12 py-5'>
-						<img
-							src={icon}
-							alt={title[lang]}
-							className='h-16 w-16 object-contain'
-						/>
-						<h3 className='text-center text-[20px] font-bold text-white'>
-							{title[lang]}
-						</h3>
-					</div>
-				</motion.div>
-			</Tilt>
-		)
-	},
-)
+	return (
+		<Tilt
+			options={{
+				max: 35,
+				scale: 1.05,
+				speed: 450,
+				reverse: true,
+			}}
+			className='w-full xs:w-[250px]'>
+			<motion.div
+				variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
+				className='green-pink-gradient w-full rounded-[20px] p-[1px] shadow-card'>
+				<div
+					className='flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5'
+					style={{ backgroundColor: 'var(--card-bg)' }}>
+					<img src={icon} alt={title[lang]} className='h-16 w-16 object-contain' />
+					<h3 className='text-center text-[20px] font-bold text-text-on-card'>
+						{title[lang]}
+					</h3>
+				</div>
+			</motion.div>
+		</Tilt>
+	)
+})
 
 const About: FC = memo(() => {
 	const { lang, translations } = useLang()
@@ -47,10 +43,8 @@ const About: FC = memo(() => {
 	return (
 		<>
 			<motion.div variants={textVariant(0)}>
-				<p className={styles.sectionSubText}>
-					{translations[lang].about.introduction}
-				</p>
-				<h2 className={styles.sectionHeadText}>
+				<p className={styles.sectionSubText}>{translations[lang].about.introduction}</p>
+				<h2 className={`${styles.sectionHeadText} text-text-heading`}>
 					{translations[lang].about.overwiew}
 				</h2>
 			</motion.div>
@@ -63,11 +57,7 @@ const About: FC = memo(() => {
 
 			<div className='mt-20 flex flex-wrap gap-10'>
 				{services.map((service, index) => (
-					<ServiceCard
-						key={service.title.en}
-						index={index}
-						{...service}
-					/>
+					<ServiceCard key={service.title.en} index={index} {...service} />
 				))}
 			</div>
 		</>

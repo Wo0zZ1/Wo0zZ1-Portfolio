@@ -13,10 +13,4 @@ interface IThemeContext {
 	setTheme: React.Dispatch<React.SetStateAction<Theme>>
 }
 
-export type {
-	AllowedLangs,
-	itemForLang,
-	ILangContext,
-	Theme,
-	IThemeContext,
-}
+export type { AllowedLangs, itemForLang, ILangContext, Theme, IThemeContext }

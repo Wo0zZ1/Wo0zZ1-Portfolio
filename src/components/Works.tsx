@@ -9,7 +9,7 @@ import { github } from '../assets'
 import { projects } from '../constants'
 import { IProject } from '../constants'
 
-import useLang from '../hooks/useLang'
+import { useLang } from '../hooks'
 
 import { fadeIn, textVariant } from '../utils'
 
@@ -17,21 +17,12 @@ import { styles } from '../styles'
 import { Link } from 'react-router-dom'
 
 const ProjectCard: FC<IProject & { index: number }> = memo(
-	({
-		index,
-		name,
-		description,
-		tags,
-		image,
-		source_code_link,
-		site_link,
-	}) => {
+	({ index, name, description, tags, image, source_code_link, site_link }) => {
 		const { lang } = useLang()
 
 		return (
 			<>
-				<motion.div
-					variants={fadeIn('up', 'spring', index * 0.75, 0.8)}>
+				<motion.div variants={fadeIn('up', 'spring', index * 0.75, 0.8)}>
 					<Tilt
 						options={{
 							max: 20,
@@ -39,8 +30,8 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 							speed: 450,
 							reverse: true,
 						}}
-						className='w-full rounded-2xl bg-tertiary p-5 shadow-card sm:w-[360px]'>
-						{/* TODO edit hover effect */}
+						className='shadow-card w-full rounded-2xl p-5 sm:w-[360px]'
+						style={{ backgroundColor: 'var(--card-bg)' }}>
 						<div className='relative h-[230px] w-full transition hover:contrast-75'>
 							<Link
 								className='z-50 h-full w-full cursor-pointer rounded-2xl'
@@ -54,38 +45,30 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 							</Link>
 
 							<div className='card-img_hover absolute top-0 right-0 m-3 flex justify-end gap-1'>
-								{/* TODO use map */}
-								<div
-									onClick={() =>
-										window.open(source_code_link, '_blank')
-									}
+								<Link
+									to={source_code_link}
+									target='_blank'
 									className='black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition hover:scale-110'>
-									<img
-										src={github}
-										alt='github'
-										className='h-1/2 w-1/2 object-contain'
-									/>
-								</div>
+									<img src={github} alt='github' className='h-1/2 w-1/2 object-contain' />
+								</Link>
 							</div>
 						</div>
-
 						<div className='mt-5'>
-							<h3 className='text-[24px] font-bold text-white'>
+							<h3
+								className='text-[24px] font-bold'
+								style={{ color: 'var(--text-heading)' }}>
 								{name}
 							</h3>
-							<p className='mt-2 text-[14px] text-secondary'>
+							<p className='mt-2 text-[14px]' style={{ color: 'var(--text-on-card)' }}>
 								{description[lang]}
 							</p>
-						</div>
-
+						</div>{' '}
 						<div className='mt-4 flex cursor-pointer flex-wrap gap-3'>
 							{tags.map(tag => (
 								<div
 									key={tag.name}
-									className='rounded-2xl bg-slate-600/30 px-1.5 py-0.5 hover:bg-slate-600/50'>
-									<p className={`text-[14px] ${tag.color}`}>
-										#{tag.name}
-									</p>
+									className='rounded-2xl px-1.5 py-0.5 transition-colors bg-[var(--bg-tag)] hover:bg-[var(--bg-tag-hover)]'>
+									<p className={`text-[14px] ${tag.color}`}>#{tag.name}</p>
 								</div>
 							))}
 						</div>
@@ -102,10 +85,8 @@ const Works: FC = memo(() => {
 	return (
 		<>
 			<motion.div variants={textVariant(0)}>
-				<p className={styles.sectionSubText}>
-					{translations[lang].works.my_work}
-				</p>
-				<h2 className={styles.sectionHeadText}>
+				<p className={styles.sectionSubText}>{translations[lang].works.my_work}</p>
+				<h2 className={`${styles.sectionHeadText} text-text-heading`}>
 					{translations[lang].works.projects}
 				</h2>
 			</motion.div>
@@ -120,11 +101,7 @@ const Works: FC = memo(() => {
 
 			<div className='mt-20 flex flex-wrap gap-7'>
 				{projects.map((project, index) => (
-					<ProjectCard
-						key={`project-${index}`}
-						index={index}
-						{...project}
-					/>
+					<ProjectCard key={`project-${index}`} index={index} {...project} />
 				))}
 			</div>
 		</>

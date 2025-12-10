@@ -1,49 +1,42 @@
-import { createContext, useEffect, useState, FC } from 'react'
+import { createContext, useState, FC, useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import type {
-	AllowedLangs,
-	ILangContext,
-	IThemeContext,
-	Theme,
-} from './types'
+import type { AllowedLangs, ILangContext, IThemeContext, Theme } from './types'
 
 import { MainLayout } from './layouts'
 import { Main } from './pages'
 
 import './index.scss'
-import { db } from './utils'
+import './variables.scss'
 
-export const LangContext = createContext<
-	ILangContext | undefined
->(undefined)
+export const LangContext = createContext<ILangContext | undefined>(undefined)
 
-export const themeContext = createContext<
-	IThemeContext | undefined
->(undefined)
+export const ThemeContext = createContext<IThemeContext | undefined>(undefined)
 
 const App: FC = () => {
 	const [theme, setTheme] = useState<Theme>('dark')
 	const [lang, setLang] = useState<AllowedLangs>('en')
 
 	useEffect(() => {
-		db.post('/log')
-	}, [])
-
-	useEffect(() => {
 		const htmlStyles = document.documentElement.classList
-		if (theme === 'dark') htmlStyles.add(theme)
-		else htmlStyles.remove('dark')
+
+		if (theme === 'dark') {
+			htmlStyles.add('dark')
+			htmlStyles.remove('light')
+		} else if (theme === 'light') {
+			htmlStyles.add('light')
+			htmlStyles.remove('dark')
+		}
 	}, [theme])
 
 	return (
 		<BrowserRouter>
 			<LangContext.Provider value={{ lang, setLang }}>
-				<themeContext.Provider value={{ theme, setTheme }}>
+				<ThemeContext.Provider value={{ theme, setTheme }}>
 					<MainLayout>
 						<Main />
 					</MainLayout>
-				</themeContext.Provider>
+				</ThemeContext.Provider>
 			</LangContext.Provider>
 		</BrowserRouter>
 	)

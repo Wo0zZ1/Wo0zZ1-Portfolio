@@ -12,7 +12,7 @@ import { SectionWrapper } from '../hocs'
 import { textVariant } from '../utils'
 
 import { styles } from '../styles'
-import useLang from '../hooks/useLang'
+import { useLang } from '../hooks'
 
 const ExperienceCard: FC<IExperience> = memo(
 	({ company_name, date, icon, iconBg, points, title }) => {
@@ -21,10 +21,10 @@ const ExperienceCard: FC<IExperience> = memo(
 		return (
 			<VerticalTimelineElement
 				contentStyle={{
-					background: '#1d1836',
-					color: '#ffffff',
+					background: 'var(--bg-timeline-card)',
+					color: 'var(--text-primary)',
 				}}
-				contentArrowStyle={{ borderRight: '7px solid #232631' }}
+				contentArrowStyle={{ borderRight: '7px solid var(--bg-timeline-arrow)' }}
 				date={date[lang]}
 				icon={
 					<div className='flex h-full w-full items-center justify-center'>
@@ -37,14 +37,11 @@ const ExperienceCard: FC<IExperience> = memo(
 				}
 				iconStyle={{ background: iconBg }}>
 				<div>
-					<h3 className='text-[24px] font-bold text-white'>
+					<h3 className='text-[24px] font-bold' style={{ color: 'var(--text-heading)' }}>
 						{title[lang]}
 					</h3>
-					<p className='!m-0 text-[16px] font-semibold text-secondary'>
-						{company_name}
-					</p>
-				</div>
-
+					<p className='!m-0 text-[16px] font-semibold text-secondary'>{company_name}</p>
+				</div>{' '}
 				<ul className='ml-5 mt-5 list-disc space-y-2'>
 					{points.map((point, index) => (
 						<li
@@ -65,16 +62,14 @@ const Experience: FC = memo(() => {
 	return (
 		<>
 			<motion.div variants={textVariant(0)}>
-				<p className={styles.sectionSubText}>
-					{translations[lang].experience.my_path}
-				</p>
-				<h2 className={styles.sectionHeadText}>
+				<p className={styles.sectionSubText}>{translations[lang].experience.my_path}</p>
+				<h2 className={`${styles.sectionHeadText} text-text-heading`}>
 					{translations[lang].experience.work_experience}
 				</h2>
 			</motion.div>
 
 			<div className='mt-20 flex flex-col overflow-hidden'>
-				<VerticalTimeline>
+				<VerticalTimeline lineColor='var(--bg-timeline-line)'>
 					{experiences.map((experience, index) => (
 						<ExperienceCard key={index} {...experience} />
 					))}

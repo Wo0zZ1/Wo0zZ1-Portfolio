@@ -3,7 +3,7 @@ import { FC, memo, useCallback } from 'react'
 
 import Theme from '../../assets/language.svg?react'
 
-import useLang from '../../hooks/useLang'
+import { useLang } from '../../hooks'
 
 const ChangeLanguage: FC = memo(() => {
 	const { lang, setLang } = useLang()
@@ -17,7 +17,7 @@ const ChangeLanguage: FC = memo(() => {
 		<div
 			onClick={changeLanguageHandler}
 			className='p-0.5 cursor-pointer hover:bg-slate-500/30 rounded'>
-			<Theme className='size-8' style={{ color: 'white' }} />
+			<Theme className='size-8' style={{ color: 'var(--icon-color)' }} />
 		</div>
 	)
 })
