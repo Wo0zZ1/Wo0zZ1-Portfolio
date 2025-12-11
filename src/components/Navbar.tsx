@@ -45,18 +45,18 @@ const Navbar: FC = memo(() => {
 						<ChangeTheme />
 					</div>
 
-				{/* Navigation */}
-				<ul className='list-none flex flex-row items-center gap-10 '>
-					{navLinks.map(link => (
-						<li
-							key={link.id}
-							className={`${
-								active === link.title[lang] ? 'text-text-heading' : 'text-secondary'
-							} cursor-pointer text-[18px] font-medium hover:text-text-heading`}
-							onClick={() => onNavClick(link.title.en)}>
-							<a href={`#${link.id}`}>{link.title[lang]}</a>
-						</li>
-					))}
+					{/* Navigation */}
+					<ul className='list-none flex flex-row items-center gap-10 '>
+						{navLinks.map(link => (
+							<li
+								key={link.id}
+								className={`${
+									active === link.title[lang] ? 'text-text-heading' : 'text-secondary'
+								} cursor-pointer text-[18px] font-medium hover:text-text-heading`}
+								onClick={() => onNavClick(link.title.en)}>
+								<a href={`#${link.id}`}>{link.title[lang]}</a>
+							</li>
+						))}
 					</ul>
 				</div>
 
@@ -72,21 +72,21 @@ const Navbar: FC = memo(() => {
 						className={`${
 							toggle ? 'flex' : 'hidden'
 						} black-gradient min-w[140px] absolute right-0 top-20 z-10 mx-4 my-2 rounded-xl p-6`}>
-					<ul className='flex list-none flex-col items-start justify-end gap-4'>
-						{navLinks.map(link => (
-							<li
-								key={link.id}
-								className={`${
-									active === link.title[lang] ? 'text-text-heading' : 'text-secondary'
-								} font-poppins cursor-pointer text-[16px] font-medium hover:text-text-heading`}
-								onClick={() => {
-									setActive(link.title[lang])
-									setToggle(false)
-								}}>
-								<a href={`#${link.id}`}>{link.title[lang]}</a>
-							</li>
-						))}
-					</ul>
+						<ul className='flex list-none flex-col items-start justify-end gap-4'>
+							{navLinks.map(link => (
+								<li
+									key={link.id}
+									className={`${
+										active === link.title[lang] ? 'text-text-heading' : 'text-secondary'
+									} font-poppins cursor-pointer text-[16px] font-medium hover:text-text-heading`}
+									onClick={() => {
+										setActive(link.title[lang])
+										setToggle(false)
+									}}>
+									<a href={`#${link.id}`}>{link.title[lang]}</a>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</div>

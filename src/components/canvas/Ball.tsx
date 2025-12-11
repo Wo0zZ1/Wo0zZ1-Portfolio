@@ -2,9 +2,11 @@ import { FC, memo, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
 import CanvasLoader from '../Loader'
+import { useCSSVariable } from '../../hooks'
 
 const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
 	const [decal] = useTexture([imgUrl])
+	const meshColor = useCSSVariable('--color-mesh')
 
 	return (
 		<>
@@ -14,7 +16,7 @@ const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
 				<mesh castShadow receiveShadow scale={2.75}>
 					<icosahedronGeometry args={[1, 1]} />
 					<meshStandardMaterial
-						color='var(--color-mesh)'
+						color={meshColor}
 						polygonOffset
 						polygonOffsetFactor={-5}
 						flatShading
@@ -33,7 +35,15 @@ const Ball: FC<{ imgUrl: string }> = memo(({ imgUrl }) => {
 
 const BallCanvas: FC<{ icon: string }> = memo(({ icon }) => {
 	return (
-		<Canvas frameloop='demand' gl={{ preserveDrawingBuffer: true }}>
+		<Canvas 
+			frameloop='demand' 
+			dpr={[1, 2]}
+			gl={{ 
+				preserveDrawingBuffer: true,
+				antialias: false,
+				powerPreference: 'high-performance'
+			}}
+		>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls enablePan={false} enableZoom={false} />
 				<Ball imgUrl={icon} />

@@ -1,19 +1,26 @@
 import mobile from '../assets/mobile.png'
 import backend from '../assets/backend.png'
+
 import web from '../assets/web.png'
-import javascript from '../assets/tech/javascript.png'
-import typescript from '../assets/tech/typescript.png'
+import fullstack from '../assets/company/fullstack.png'
+
 import html from '../assets/tech/html.png'
 import css from '../assets/tech/css.png'
+import git from '../assets/tech/git.png'
+import javascript from '../assets/tech/javascript.png'
+import typescript from '../assets/tech/typescript.png'
 import reactjs from '../assets/tech/reactjs.png'
+import nextjs from '../assets/tech/nextjs.svg'
 import redux from '../assets/tech/redux.png'
 import tailwind from '../assets/tech/tailwind.png'
 import nodejs from '../assets/tech/nodejs.png'
-import mongodb from '../assets/tech/mongodb.png'
-import git from '../assets/tech/git.png'
-import figma from '../assets/tech/figma.png'
-import threejs from '../assets/tech/threejs.svg'
-import fullstack from '../assets/company/fullstack.png'
+import docker from '../assets/tech/docker.png'
+import kubernetes from '../assets/tech/kubernetes.png'
+import githubactions from '../assets/tech/githubactions.png'
+import jest from '../assets/tech/jest.svg'
+import zustand from '../assets/tech/zustand.png'
+import nestjs from '../assets/tech/nestjs.svg'
+
 import notes from '../assets/projects/notes.jpg'
 import define_limit from '../assets/projects/define-limit.png'
 
@@ -208,18 +215,6 @@ interface ITechnology {
 
 const technologies: ITechnology[] = [
 	{
-		name: 'HTML 5',
-		icon: html,
-	},
-	{
-		name: 'CSS 3',
-		icon: css,
-	},
-	{
-		name: 'JavaScript',
-		icon: javascript,
-	},
-	{
 		name: 'TypeScript',
 		icon: typescript,
 	},
@@ -228,32 +223,44 @@ const technologies: ITechnology[] = [
 		icon: reactjs,
 	},
 	{
+		name: 'Next JS',
+		icon: nextjs,
+	},
+	{
 		name: 'Redux Toolkit',
 		icon: redux,
+	},
+	{
+		name: 'Zustand',
+		icon: zustand,
 	},
 	{
 		name: 'Tailwind CSS',
 		icon: tailwind,
 	},
 	{
-		name: 'Node JS',
-		icon: nodejs,
-	},
-	{
-		name: 'MongoDB',
-		icon: mongodb,
-	},
-	{
-		name: 'Three JS',
-		icon: threejs,
-	},
-	{
-		name: 'git',
+		name: 'Git',
 		icon: git,
 	},
 	{
-		name: 'figma',
-		icon: figma,
+		name: 'Docker',
+		icon: docker,
+	},
+	{
+		name: 'Kubernetes',
+		icon: kubernetes,
+	},
+	{
+		name: 'GitHub Actions',
+		icon: githubactions,
+	},
+	{
+		name: 'Nest JS',
+		icon: nestjs,
+	},
+	{
+		name: 'Jest',
+		icon: jest,
 	},
 ]
 
@@ -318,30 +325,6 @@ const projects: IProject[] = [
 		source_code_link: 'https://github.com/Wo0zZ1/define-limit',
 		site_link: 'https://define-limit.vercel.app/',
 	},
-	// {
-	// 	name: 'Trip Guide',
-	// 	description: {
-	// 		en: 'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
-	// 		ru: 'Всеобъемлющая платформа для бронирования путешествий, которая позволяет пользователям бронировать рейсы, отели и аренду автомобилей, а также предлагает тщательно подобранные рекомендации по популярным направлениям.',
-	// 	},
-	// 	tags: [
-	// 		{
-	// 			name: 'nextjs',
-	// 			color: 'blue-text-gradient',
-	// 		},
-	// 		{
-	// 			name: 'supabase',
-	// 			color: 'green-text-gradient',
-	// 		},
-	// 		{
-	// 			name: 'css',
-	// 			color: 'pink-text-gradient',
-	// 		},
-	// 	],
-	// 	image: tripguide,
-	// 	source_code_link: 'https://github.com/Wo0zZ1/define-limit',
-	// 	site_link: 'https://define-limit.vercel.app/',
-	// },
 ]
 
 // Feedbacks section

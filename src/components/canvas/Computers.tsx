@@ -1,29 +1,14 @@
-import { FC, memo, Suspense, useEffect, useState } from 'react'
+import { FC, memo, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import {
-	OrbitControls,
-	Preload,
-	useGLTF,
-} from '@react-three/drei'
+import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'
+import { useDimensions } from '../../hooks'
 
 const Computers: FC = memo(() => {
 	const computer = useGLTF('./desktop_pc/scene.gltf')
 
-	const [width, setWidth] = useState(window.innerWidth)
-
-	// TODOD create hook useWidth
-	useEffect(() => {
-		const resizeHandler = (e: UIEvent) =>
-			e.target instanceof Window && setWidth(e.target.innerWidth)
-
-		addEventListener('resize', resizeHandler)
-
-		return () => {
-			removeEventListener('resize', resizeHandler)
-		}
-	}, [])
+	const { width } = useDimensions()
 
 	let scale = 0
 	if (width >= 640) scale = 0.65
@@ -57,8 +42,12 @@ const ComputerCanvas: FC = memo(() => {
 		<Canvas
 			frameloop='demand'
 			shadows
+			dpr={[1, 2]}
 			camera={{ position: [20, 3, 5], fov: 25 }}
-			gl={{ preserveDrawingBuffer: true }}>
+			gl={{
+				preserveDrawingBuffer: true,
+				powerPreference: 'high-performance',
+			}}>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
 					enablePan={false}

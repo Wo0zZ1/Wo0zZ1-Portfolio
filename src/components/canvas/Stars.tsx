@@ -1,14 +1,17 @@
 import { useRef, Suspense, FC, memo, useMemo } from 'react'
+import { Group } from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial, Preload } from '@react-three/drei'
-import { Group, Object3DEventMap } from 'three'
-import * as random from 'maath/random/dist/maath-random.cjs'
+import { inSphere } from 'maath/random'
 
-const Stars: FC = memo(props => {
-	const pointsRef = useRef<Group<Object3DEventMap> | null>(null)
+import { useCSSVariable } from '../../hooks'
+
+const Stars: FC = memo(() => {
+	const pointsRef = useRef<Group>(null)
+	const accentColor = useCSSVariable('--color-accent-pink')
 
 	const sphere = useMemo(
-		() => new Float32Array(random.inSphere(new Float32Array(5000), { radius: 1.2 })),
+		() => new Float32Array(inSphere(new Float32Array(3 * 2500), { radius: 1.1 })),
 		[],
 	)
 
@@ -21,11 +24,11 @@ const Stars: FC = memo(props => {
 
 	return (
 		<group ref={pointsRef} rotation={[0, 0, Math.PI / 4]}>
-			<Points positions={sphere} stride={3} frustumCulled {...props}>
+			<Points positions={sphere} stride={3} frustumCulled>
 				<PointMaterial
 					transparent
-					color='var(--color-accent-pink)'
-					size={0.002}
+					size={0.003}
+					color={accentColor}
 					sizeAttenuation={true}
 					depthWrite={false}
 				/>
@@ -37,7 +40,13 @@ const Stars: FC = memo(props => {
 const StarsCanvas: FC = memo(() => {
 	return (
 		<div className='w-full h-auto absolute inset-0 z-[-1]'>
-			<Canvas camera={{ position: [0, 0, 1] }}>
+			<Canvas
+				camera={{ position: [0, 0, 1] }}
+				dpr={[1, 2]}
+				gl={{
+					antialias: false,
+					powerPreference: 'high-performance',
+				}}>
 				<Suspense fallback={null}>
 					<Stars />
 					<Preload all />
