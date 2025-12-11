@@ -1,28 +1,26 @@
-import mobile from '../assets/mobile.png'
-import backend from '../assets/backend.png'
+import nextjs from '../assets/roles/web.svg'
+import electron from '../assets/roles/desktop.svg'
+import reactnative from '../assets/roles/mobile.svg'
+import nestjs from '../assets/roles/backend.svg'
 
-import web from '../assets/web.png'
-import fullstack from '../assets/company/fullstack.png'
-
+import nodejs from '../assets/tech/nodejs.png'
 import html from '../assets/tech/html.png'
-import css from '../assets/tech/css.png'
-import git from '../assets/tech/git.png'
-import javascript from '../assets/tech/javascript.png'
 import typescript from '../assets/tech/typescript.png'
 import reactjs from '../assets/tech/reactjs.png'
-import nextjs from '../assets/tech/nextjs.svg'
 import redux from '../assets/tech/redux.png'
+import zustand from '../assets/tech/zustand.png'
 import tailwind from '../assets/tech/tailwind.png'
-import nodejs from '../assets/tech/nodejs.png'
+import git from '../assets/tech/git.png'
 import docker from '../assets/tech/docker.png'
 import kubernetes from '../assets/tech/kubernetes.png'
 import githubactions from '../assets/tech/githubactions.png'
 import jest from '../assets/tech/jest.svg'
-import zustand from '../assets/tech/zustand.png'
-import nestjs from '../assets/tech/nestjs.svg'
 
+import unolingo from '../assets/projects/unolingo.png'
 import notes from '../assets/projects/notes.jpg'
 import define_limit from '../assets/projects/define-limit.png'
+import unixshellemulator from '../assets/projects/unix-shell-emulator.jpg'
+import webcalculator from '../assets/projects/web-calculator.jpg'
 
 import { itemForLang } from '../types'
 
@@ -70,21 +68,28 @@ const services: IService[] = [
 			en: 'Web Developer',
 			ru: 'Web разработчик',
 		},
-		icon: web,
+		icon: nextjs,
 	},
 	{
 		title: {
-			en: 'React Developer',
-			ru: 'React Разработчик',
+			en: 'Desktop Developer',
+			ru: 'Desktop разработчик',
 		},
-		icon: mobile,
+		icon: electron,
+	},
+	{
+		title: {
+			en: 'Mobile Developer',
+			ru: 'Мобильный разработчик',
+		},
+		icon: reactnative,
 	},
 	{
 		title: {
 			en: 'Backend Developer',
 			ru: 'Backend Разработчик',
 		},
-		icon: backend,
+		icon: nestjs,
 	},
 ]
 
@@ -118,35 +123,8 @@ const experiences: IExperience[] = [
 				ru: 'Создание отзывчивых и доступных веб-страниц с использованием HTML5, CSS3 и JavaScript.',
 			},
 			{
-				en: 'Utilizing preprocessors such as SASS or LESS to streamline stylesheet development.',
-				ru: 'Использование препроцессоров, таких как SASS или LESS, для оптимизации разработки таблиц стилей.',
-			},
-		],
-	},
-	{
-		title: {
-			en: 'Node.js Developer',
-			ru: 'Node.js Разработчик',
-		},
-		company_name: '',
-		icon: nodejs,
-		iconBg: '#E6DEDD',
-		date: {
-			en: 'September 2021 - December 2021',
-			ru: 'Сентябрь 2021 - Декабрь 2021',
-		},
-		points: [
-			{
-				en: 'Designing and implementing RESTful APIs using Express.js.',
-				ru: 'Проектирование и реализация RESTful API с использованием Express.js.',
-			},
-			{
-				en: 'Building scalable backend systems using Node.js and MongoDB.',
-				ru: 'Создание масштабируемых бэкенд-систем с использованием Node.js и MongoDB.',
-			},
-			{
-				en: 'Optimizing application performance through caching and load balancing techniques.',
-				ru: 'Оптимизация производительности приложения с помощью кэширования и балансировки нагрузки.',
+				en: 'Utilizing preprocessors such as SASS to streamline stylesheet development.',
+				ru: 'Использование препроцессоров, таких как SASS для оптимизации разработки таблиц стилей.',
 			},
 		],
 	},
@@ -159,8 +137,8 @@ const experiences: IExperience[] = [
 		icon: reactjs,
 		iconBg: '#E6DEDD',
 		date: {
-			en: 'Июль 2021 - Июль 2023',
-			ru: 'July 2021 - July 2023',
+			en: 'September 2021 - December 2024',
+			ru: 'Сентябрь 2021 - Декабрь 2024',
 		},
 		points: [
 			{
@@ -168,12 +146,47 @@ const experiences: IExperience[] = [
 				ru: 'Разработка и поддержка веб-приложений с использованием React.js и других связанных технологий.',
 			},
 			{
-				en: 'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				ru: 'Сотрудничество с межфункциональными командами, включая дизайнеров, продуктовых менеджеров и других разработчиков для создания высококачественных продуктов.',
+				en: 'Participating in hackathons, collaborating with teams of designers and developers to build innovative solutions under tight deadlines.',
+				ru: 'Участие в хакатонах, сотрудничество с командами дизайнеров и разработчиков для создания инновационных решений в сжатые сроки.',
 			},
 			{
 				en: 'Implementing responsive design and ensuring cross-browser compatibility.',
 				ru: 'Реализация адаптивного дизайна и обеспечение кроссбраузерной совместимости.',
+			},
+			{
+				en: 'Participating in hackathons, working in teams to rapidly prototype and deliver working solutions.',
+				ru: 'Участие в хакатонах, работа в командах для быстрого прототипирования и создания работающих решений.',
+			},
+		],
+	},
+	{
+		title: {
+			en: 'Node.js Developer',
+			ru: 'Node.js Разработчик',
+		},
+		company_name: '',
+		icon: nodejs,
+		iconBg: '#E6DEDD',
+		date: {
+			en: 'June 2022 - December 2024',
+			ru: 'Июнь 2022 - Декабрь 2024',
+		},
+		points: [
+			{
+				en: 'Building scalable backend systems using Node.js and PostgreSQL.',
+				ru: 'Создание масштабируемых бэкенд-систем с использованием Node.js и PostgreSQL.',
+			},
+			{
+				en: 'Implementing message-driven microservices architecture using RabbitMQ for asynchronous communication.',
+				ru: 'Реализация архитектуры микросервисов с использованием RabbitMQ для асинхронного взаимодействия.',
+			},
+			{
+				en: 'Optimizing application performance through caching with Redis and load balancing techniques.',
+				ru: 'Оптимизация производительности приложения с помощью кэширования с Redis и балансировки нагрузки.',
+			},
+			{
+				en: 'Writing unit and integration tests using Jest to ensure code quality and reliability.',
+				ru: 'Написание модульных и интеграционных тестов с использованием Jest для обеспечения качества и надежности кода.',
 			},
 		],
 	},
@@ -183,11 +196,11 @@ const experiences: IExperience[] = [
 			ru: 'Fullstack разработчик',
 		},
 		company_name: '',
-		icon: fullstack,
+		icon: nextjs,
 		iconBg: '#E6DEDD',
 		date: {
-			en: 'October 2024 - Now',
-			ru: 'Октябрь 2024 - Сейчас',
+			en: 'January 2025 - Now',
+			ru: 'Январь 2025 - Сейчас',
 		},
 		points: [
 			{
@@ -195,12 +208,16 @@ const experiences: IExperience[] = [
 				ru: 'Разработка полнофункциональных веб-приложений от концепции до развертывания.',
 			},
 			{
-				en: 'Building user interfaces with modern frontend technologies like React.js.',
-				ru: 'Создание пользовательских интерфейсов с использованием современных фронтенд-технологий, таких как React.js.',
+				en: 'Building user interfaces with modern frontend technologies like React.js and Next.js.',
+				ru: 'Создание пользовательских интерфейсов с использованием современных фронтенд-технологий, таких как React.js и Next.js.',
 			},
 			{
-				en: 'Designing and implementing robust backend services using Node.js.',
-				ru: 'Проектирование и реализация надежных бэкенд-сервисов с использованием Node.js.',
+				en: 'Designing and implementing robust backend services using NestJS.',
+				ru: 'Проектирование и реализация надежных бэкенд-сервисов с использованием NestJS.',
+			},
+			{
+				en: 'Actively participating in hackathons, working in teams to rapidly prototype and deliver working solutions.',
+				ru: 'Активное участие в хакатонах, работа в командах для быстрого прототипирования и создания работающих решений.',
 			},
 		],
 	},
@@ -282,6 +299,87 @@ interface IProject {
 
 const projects: IProject[] = [
 	{
+		name: 'Unix Shell Emulator',
+		description: {
+			en: 'A graphical UNIX command line emulator built with Electron. Features a virtual file system loaded from XML, supports 20+ shell commands, auto-completion, command history, environment variables, pipes and I/O redirection.',
+			ru: 'Графический эмулятор командной строки UNIX на Electron. Включает виртуальную файловую систему из XML, поддержку 20+ команд оболочки, автодополнение, историю команд, переменные окружения, конвейеры и перенаправление ввода/вывода.',
+		},
+		tags: [
+			{
+				name: 'Electron',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'TypeScript',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'Jest',
+				color: 'orange-text-gradient',
+			},
+			{
+				name: 'XML',
+				color: 'pink-text-gradient',
+			},
+		],
+		image: unixshellemulator,
+		source_code_link: 'https://github.com/Wo0zZ1/unix-shell-emulator',
+		site_link: 'https://github.com/Wo0zZ1/unix-shell-emulator#readme',
+	},
+	{
+		name: 'Unolingo',
+		description: {
+			en: 'An interactive mobile application for learning foreign languages through gamification (a clone of Duolingo).',
+			ru: 'Интерактивное мобильное приложение для изучения иностранных языков с помощью геймификации (клон Duolingo).',
+		},
+		tags: [
+			{
+				name: 'React Native',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'PostgreSQL',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'NestJS',
+				color: 'orange-text-gradient',
+			},
+			{
+				name: 'Expo',
+				color: 'green-text-gradient',
+			},
+		],
+		image: unolingo,
+		source_code_link: 'https://github.com/Wo0zZ1/unolingo',
+		site_link:
+			'https://github.com/Wo0zZ1/unolingo?tab=readme-ov-file#-%D0%B4%D0%B5%D0%BC%D0%BE',
+	},
+	{
+		name: 'Web Calculator',
+		description: {
+			en: 'A simple and intuitive web calculator with basic arithmetic operations built using HTML, CSS and JavaScript in OOP style. Features instant calculations, theme switching, adaptive design, and an interactive interface with animated buttons.',
+			ru: 'Простой и интуитивно понятный веб-калькулятор с базовыми арифметическими операциями, созданный с использованием HTML, CSS и JavaScript в ООП стиле. Включает мгновенные вычисления, смену темы, адаптивный дизайн и интерактивный интерфейс с анимированными кнопками.',
+		},
+		tags: [
+			{
+				name: 'JavaScript',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'HTML/CSS',
+				color: 'orange-text-gradient',
+			},
+			{
+				name: 'OOP',
+				color: 'green-text-gradient',
+			},
+		],
+		image: webcalculator,
+		source_code_link: 'https://github.com/Wo0zZ1/web-calculator',
+		site_link: 'https://webcalculator-tan.vercel.app/',
+	},
+	{
 		name: 'Notes',
 		description: {
 			en: 'A simple yet powerful web-based task management app that helps users organize their tasks and boost productivity.',
@@ -289,11 +387,11 @@ const projects: IProject[] = [
 		},
 		tags: [
 			{
-				name: 'react',
+				name: 'React',
 				color: 'blue-text-gradient',
 			},
 			{
-				name: 'scss',
+				name: 'SCSS',
 				color: 'pink-text-gradient',
 			},
 		],
@@ -317,7 +415,7 @@ const projects: IProject[] = [
 				color: 'green-text-gradient',
 			},
 			{
-				name: 'tailwind',
+				name: 'Tailwind CSS',
 				color: 'pink-text-gradient',
 			},
 		],

@@ -1,7 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
-import { FC, memo, useCallback } from 'react'
+import Theme from '../../assets/icons/language.svg?react'
 
-import Theme from '../../assets/language.svg?react'
+import { FC, memo, useCallback } from 'react'
 
 import { useLang } from '../../hooks'
 

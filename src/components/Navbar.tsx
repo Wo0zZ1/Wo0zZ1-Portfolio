@@ -1,10 +1,12 @@
 import { useState, FC, useCallback, memo } from 'react'
 import { Link } from 'react-router-dom'
 
+import menu from '../assets/icons/menu.svg'
+import close from '../assets/icons/close.svg'
+
 import { navLinks } from '../constants'
-import menu from '../assets/menu.svg'
-import close from '../assets/close.svg'
-import { ChangeTheme, ChangeLanguage } from './features/'
+
+import { ChangeTheme, ChangeLanguage } from './features'
 import { LogoWithText } from './entites'
 
 import { useLang } from '../hooks'

@@ -1,4 +1,6 @@
-import Theme from '../../assets/theme.svg?react'
+/// <reference types="vite-plugin-svgr/client" />
+import Theme from '../../assets/icons/theme.svg?react'
+
 import { FC, memo } from 'react'
 import { useTheme } from '../../hooks'
 
