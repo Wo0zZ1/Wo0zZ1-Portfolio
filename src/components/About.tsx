@@ -19,14 +19,11 @@ const ServiceCard: FC<IService & { index: number }> = memo(({ index, title, icon
 				scale: 1.05,
 				speed: 450,
 				reverse: true,
-			}}
-			className='w-full xs:w-[250px]'>
+			}}>
 			<motion.div
 				variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
 				className='green-pink-gradient w-full rounded-[20px] p-[1px] shadow-card'>
-				<div
-					className='flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5'
-					style={{ backgroundColor: 'var(--card-bg)' }}>
+				<div className='flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] p-4 bg-card-bg'>
 					<img src={icon} alt={title[lang]} className='h-16 w-16 object-contain' />
 					<h3 className='text-center text-[20px] font-bold text-text-on-card'>
 						{title[lang]}
@@ -55,7 +52,7 @@ const About: FC = memo(() => {
 				{translations[lang].about.description}
 			</motion.p>
 
-			<div className='mt-20 flex flex-wrap gap-10'>
+			<div className='mt-20 grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] justify-center gap-4'>
 				{services.map((service, index) => (
 					<ServiceCard key={service.title.en} index={index} {...service} />
 				))}

@@ -32,9 +32,9 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 						reverse: true,
 					}}
 					className='grid row-[span_3] grid-rows-subgrid content-start grid-content-start w-full h-full p-5 rounded-2xl bg-card-bg shadow-card'>
-					<div className='relative h-[230px] w-full transition hover:contrast-75'>
+					<div className='relative w-full aspect-[330_/_230] transition hover:contrast-75'>
 						<Link
-							className='z-50 h-full w-full cursor-pointer rounded-2xl'
+							className='h-full w-full cursor-pointer rounded-2xl '
 							to={site_link}
 							target='_blank'>
 							<img
@@ -93,7 +93,7 @@ const Works: FC = memo(() => {
 			<div className='flex w-full'>
 				<motion.p
 					variants={fadeIn('', '', 0.1, 1)}
-					className='mt-3 max-w-3xl font-[17px] leading-[30px] text-secondary'>
+					className='mt-3 max-w-3xl text-lg leading-[30px] text-secondary'>
 					{translations[lang].works.description}
 				</motion.p>
 			</div>
