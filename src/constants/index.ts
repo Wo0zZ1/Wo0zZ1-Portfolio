@@ -329,8 +329,8 @@ const projects: IProject[] = [
 	{
 		name: 'Unolingo',
 		description: {
-			en: 'An interactive mobile application for learning foreign languages through gamification (a clone of Duolingo).',
-			ru: 'Интерактивное мобильное приложение для изучения иностранных языков с помощью геймификации (клон Duolingo).',
+			en: 'An interactive mobile application for learning foreign languages through gamification (a clone of Duolingo). Utilizes React Native for cross-platform development, NestJS for the backend, and PostgreSQL for data storage.',
+			ru: 'Интерактивное мобильное приложение для изучения иностранных языков с помощью геймификации (клон Duolingo). Использует React Native для кроссплатформенной разработки, NestJS для бэкенда и PostgreSQL для хранения данных.',
 		},
 		tags: [
 			{
@@ -345,10 +345,6 @@ const projects: IProject[] = [
 				name: 'NestJS',
 				color: 'orange-text-gradient',
 			},
-			{
-				name: 'Expo',
-				color: 'green-text-gradient',
-			},
 		],
 		image: unolingo,
 		source_code_link: 'https://github.com/Wo0zZ1/unolingo',
@@ -358,8 +354,8 @@ const projects: IProject[] = [
 	{
 		name: 'Web Calculator',
 		description: {
-			en: 'A simple and intuitive web calculator with basic arithmetic operations built using HTML, CSS and JavaScript in OOP style. Features instant calculations, theme switching, adaptive design, and an interactive interface with animated buttons.',
-			ru: 'Простой и интуитивно понятный веб-калькулятор с базовыми арифметическими операциями, созданный с использованием HTML, CSS и JavaScript в ООП стиле. Включает мгновенные вычисления, смену темы, адаптивный дизайн и интерактивный интерфейс с анимированными кнопками.',
+			en: 'A web calculator with basic arithmetic operations built using HTML, CSS and JavaScript in OOP style. Features instant calculations, theme switching, adaptive design, and an interactive interface.',
+			ru: 'Веб-калькулятор с основными арифметическими операциями, построенный с использованием HTML, CSS и JavaScript в стиле ООП. Особенности включают мгновенные вычисления, переключение тем, адаптивный дизайн и интерактивный интерфейс.',
 		},
 		tags: [
 			{
@@ -383,7 +379,7 @@ const projects: IProject[] = [
 		name: 'Notes',
 		description: {
 			en: 'A simple yet powerful web-based task management app that helps users organize their tasks and boost productivity.',
-			ru: 'Простое, но мощное веб-приложение для управления задачами, которое помогает пользователям организовать свои задачи и повысить производительность.',
+			ru: 'Простое, но мощное веб-приложение для управления задачами, которое помогает пользователям организовать свои задачи и повысить производительность. ',
 		},
 		tags: [
 			{

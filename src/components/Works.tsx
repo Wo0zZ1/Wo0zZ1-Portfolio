@@ -21,60 +21,59 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 		const { lang } = useLang()
 
 		return (
-			<>
-				<motion.div variants={fadeIn('up', 'spring', index * 0.75, 0.8)}>
-					<Tilt
-						options={{
-							max: 20,
-							scale: 1.05,
-							speed: 450,
-							reverse: true,
-						}}
-						className='shadow-card w-full rounded-2xl p-5 sm:w-[360px]'
-						style={{ backgroundColor: 'var(--card-bg)' }}>
-						<div className='relative h-[230px] w-full transition hover:contrast-75'>
-							<Link
-								className='z-50 h-full w-full cursor-pointer rounded-2xl'
-								to={site_link}
-								target='_blank'>
-								<img
-									src={image}
-									alt={name}
-									className='h-full w-full rounded-2xl object-cover'
-								/>
-							</Link>
+			<motion.div
+				className='w-full h-full mt-8 grid row-[span_3] grid-rows-subgrid'
+				variants={fadeIn('up', 'spring', index * 0.75, 0.8)}>
+				<Tilt
+					options={{
+						max: 20,
+						scale: 1.05,
+						speed: 450,
+						reverse: true,
+					}}
+					className='grid row-[span_3] grid-rows-subgrid content-start grid-content-start w-full h-full p-5 rounded-2xl bg-card-bg shadow-card'>
+					<div className='relative h-[230px] w-full transition hover:contrast-75'>
+						<Link
+							className='z-50 h-full w-full cursor-pointer rounded-2xl'
+							to={site_link}
+							target='_blank'>
+							<img
+								src={image}
+								alt={name}
+								className='h-full w-full rounded-2xl object-cover'
+							/>
+						</Link>
 
-							<div className='card-img_hover absolute top-0 right-0 m-3 flex justify-end gap-1'>
-								<Link
-									to={source_code_link}
-									target='_blank'
-									className='black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition hover:scale-110'>
-									<img src={github} alt='github' className='h-1/2 w-1/2 object-contain' />
-								</Link>
+						<div className='card-img_hover absolute top-0 right-0 m-3 flex justify-end gap-1'>
+							<Link
+								to={source_code_link}
+								target='_blank'
+								className='black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition hover:scale-110'>
+								<img src={github} alt='github' className='h-1/2 w-1/2 object-contain' />
+							</Link>
+						</div>
+					</div>
+					<div className='mt-5'>
+						<h3
+							className='text-[24px] font-bold'
+							style={{ color: 'var(--text-heading)' }}>
+							{name}
+						</h3>
+						<p className='mt-2 text-[14px]' style={{ color: 'var(--text-on-card)' }}>
+							{description[lang]}
+						</p>
+					</div>
+					<div className='mt-4 flex flex-wrap items-end gap-3 cursor-pointer'>
+						{tags.map(tag => (
+							<div
+								key={tag.name}
+								className='rounded-2xl px-1.5 py-0.5 transition-colors bg-bg-tag hover:bg-bg-tag-hover'>
+								<p className={`text-[14px] ${tag.color}`}>#{tag.name}</p>
 							</div>
-						</div>
-						<div className='mt-5'>
-							<h3
-								className='text-[24px] font-bold'
-								style={{ color: 'var(--text-heading)' }}>
-								{name}
-							</h3>
-							<p className='mt-2 text-[14px]' style={{ color: 'var(--text-on-card)' }}>
-								{description[lang]}
-							</p>
-						</div>{' '}
-						<div className='mt-4 flex cursor-pointer flex-wrap gap-3'>
-							{tags.map(tag => (
-								<div
-									key={tag.name}
-									className='rounded-2xl px-1.5 py-0.5 transition-colors bg-[var(--bg-tag)] hover:bg-[var(--bg-tag-hover)]'>
-									<p className={`text-[14px] ${tag.color}`}>#{tag.name}</p>
-								</div>
-							))}
-						</div>
-					</Tilt>
-				</motion.div>
-			</>
+						))}
+					</div>
+				</Tilt>
+			</motion.div>
 		)
 	},
 )
@@ -99,7 +98,7 @@ const Works: FC = memo(() => {
 				</motion.p>
 			</div>
 
-			<div className='mt-20 flex flex-wrap gap-7'>
+			<div className='mt-20 grid grid-cols-[repeat(auto-fit,minmax(min(320px,80%),1fr))] gap-x-6'>
 				{projects.map((project, index) => (
 					<ProjectCard key={`project-${index}`} index={index} {...project} />
 				))}

@@ -15,7 +15,7 @@ const FeedbackCard: FC<ITestimonial & { index: number }> = memo(
 		return (
 			<motion.div
 				variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-				className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'>
+				className='bg-black-200 p-10 rounded-3xl w-full'>
 				<p className='font-black text-[48px]' style={{ color: 'var(--text-on-card)' }}>
 					"
 				</p>
@@ -56,7 +56,7 @@ const Testimonials: FC = memo(() => {
 	return (
 		<div className='mt-12 bg-black-100 rounded-[20px]'>
 			<div
-				className={`${styles.padding} rounded-2xl min-h-[300px]`}
+				className={`${styles.padding} rounded-2xl min-h-[200px] sm:min-h-[230px] md:min-h-[260px] xl:min-h-[300px]`}
 				style={{ backgroundColor: 'var(--bg-testimonials-header)' }}>
 				<motion.div variants={textVariant(0)}>
 					<p className={styles.sectionSubText}>
@@ -67,7 +67,8 @@ const Testimonials: FC = memo(() => {
 					</h2>
 				</motion.div>
 			</div>
-			<div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
+			<div
+				className={`${styles.paddingX} pb-3 sm:pb-6 md:pb-10 xl:pb-14 -mt-20 grid grid-cols-[repeat(auto-fit,minmax(min(320px,80%),1fr))] justify-items-center gap-7`}>
 				{testimonials.map((testimonial, index) => (
 					<FeedbackCard key={testimonial.name} index={index} {...testimonial} />
 				))}

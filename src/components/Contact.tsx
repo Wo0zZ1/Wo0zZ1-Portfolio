@@ -62,11 +62,11 @@ const Contact: FC = memo(() => {
 		<div className='xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden'>
 			<motion.div
 				variants={slideIn('left', 'tween', 0.2, 1)}
-				className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
+				className='flex-[0.75] bg-black-100 p-4 sm:p-6 md:p-8 rounded-2xl'>
 				<p className={styles.sectionSubText}>{translations[lang].contact.get_in_touch}</p>
 				<h3 className={`${styles.sectionHeadText} text-text-heading`}>
 					{translations[lang].contact.contact}
-				</h3>{' '}
+				</h3>
 				<form onSubmit={handleSubmit(onSubmit)} className='mt-8 flex flex-col gap-5'>
 					<label className='flex flex-col'>
 						<span className='font-medium mb-4 text-text-primary'>
@@ -97,7 +97,7 @@ const Contact: FC = memo(() => {
 						<span className='h-5 mt-1 text-sm text-text-error'>
 							{errors.email?.message}
 						</span>
-					</label>{' '}
+					</label>
 					<label className='flex flex-col'>
 						<span className='font-medium mb-4 text-text-primary'>
 							{translations[lang].contact.your_message}
@@ -118,7 +118,7 @@ const Contact: FC = memo(() => {
 					<button
 						type='submit'
 						disabled={loading}
-						className='py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md shadow-primary transition-all duration-200 hover:scale-105 bg-[var(--btn-send)] hover:bg-[var(--btn-send-hover)]'
+						className='py-3 px-8 rounded-xl w-full sm:w-fit outline-none font-bold shadow-md shadow-primary transition-all duration-200 hover:scale-105 bg-[var(--btn-send)] hover:bg-[var(--btn-send-hover)]'
 						style={{
 							color: 'var(--btn-send-text)',
 						}}>
@@ -131,7 +131,7 @@ const Contact: FC = memo(() => {
 
 			<motion.div
 				variants={slideIn('right', 'tween', 0.2, 1)}
-				className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'>
+				className='flex-[0.25] basis-96 h-[350px] md:h-[550px]'>
 				<EarthCanvas />
 			</motion.div>
 		</div>

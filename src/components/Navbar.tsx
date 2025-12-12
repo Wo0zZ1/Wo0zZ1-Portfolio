@@ -48,7 +48,7 @@ const Navbar: FC = memo(() => {
 					</div>
 
 					{/* Navigation */}
-					<ul className='list-none flex flex-row items-center gap-10 '>
+					<ul className='list-none flex flex-row flex-[1_0_310px] select-none justify-end items-center gap-10 '>
 						{navLinks.map(link => (
 							<li
 								key={link.id}
@@ -63,7 +63,7 @@ const Navbar: FC = memo(() => {
 				</div>
 
 				{/* Small devices */}
-				<div className='flex flex-1 items-center justify-end md:hidden m'>
+				<div className='flex flex-1 items-center justify-end md:hidden'>
 					<img
 						src={toggle ? close : menu}
 						alt='menu'

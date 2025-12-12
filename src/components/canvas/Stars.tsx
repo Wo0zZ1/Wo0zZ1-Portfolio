@@ -1,8 +1,8 @@
-import { useRef, Suspense, FC, memo, useMemo } from 'react'
 import { Group } from 'three'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Points, PointMaterial, Preload } from '@react-three/drei'
 import { inSphere } from 'maath/random'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useRef, Suspense, FC, memo, useMemo } from 'react'
+import { Points, PointMaterial, Preload } from '@react-three/drei'
 
 import { useCSSVariable } from '../../hooks'
 
