@@ -98,7 +98,7 @@ const Works: FC = memo(() => {
 				</motion.p>
 			</div>
 
-			<div className='mt-20 grid grid-cols-[repeat(auto-fit,minmax(min(320px,80%),1fr))] gap-x-6'>
+			<div className='mt-20 w-full grid grid-cols-[repeat(auto-fit,minmax(min(320px,80%),1fr))] gap-x-6'>
 				{projects.map((project, index) => (
 					<ProjectCard key={`project-${index}`} index={index} {...project} />
 				))}
