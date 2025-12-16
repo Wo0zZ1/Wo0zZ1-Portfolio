@@ -16,11 +16,7 @@ import kubernetes from '../assets/tech/kubernetes.png'
 import githubactions from '../assets/tech/githubactions.png'
 import jest from '../assets/tech/jest.svg'
 
-import unolingo from '../assets/projects/unolingo.png'
-import notes from '../assets/projects/notes.jpg'
-import define_limit from '../assets/projects/define-limit.png'
-import unixshellemulator from '../assets/projects/unix-shell-emulator.jpg'
-import webcalculator from '../assets/projects/web-calculator.jpg'
+import github from '../assets/github.png'
 
 import { itemForLang } from '../types'
 
@@ -322,7 +318,7 @@ const projects: IProject[] = [
 				color: 'pink-text-gradient',
 			},
 		],
-		image: unixshellemulator,
+		image: '/projects/unix-shell-emulator.jpg',
 		source_code_link: 'https://github.com/Wo0zZ1/unix-shell-emulator',
 		site_link: 'https://github.com/Wo0zZ1/unix-shell-emulator#readme',
 	},
@@ -346,7 +342,7 @@ const projects: IProject[] = [
 				color: 'orange-text-gradient',
 			},
 		],
-		image: unolingo,
+		image: '/projects/unolingo.png',
 		source_code_link: 'https://github.com/Wo0zZ1/unolingo',
 		site_link:
 			'https://github.com/Wo0zZ1/unolingo?tab=readme-ov-file#-%D0%B4%D0%B5%D0%BC%D0%BE',
@@ -371,7 +367,7 @@ const projects: IProject[] = [
 				color: 'green-text-gradient',
 			},
 		],
-		image: webcalculator,
+		image: '/projects/web-calculator.jpg',
 		source_code_link: 'https://github.com/Wo0zZ1/web-calculator',
 		site_link: 'https://webcalculator-tan.vercel.app/',
 	},
@@ -391,7 +387,7 @@ const projects: IProject[] = [
 				color: 'pink-text-gradient',
 			},
 		],
-		image: notes,
+		image: '/projects/notes.jpg',
 		source_code_link: 'https://github.com/Wo0zZ1/notes',
 		site_link: 'https://notes-wo0zz1.vercel.app/',
 	},
@@ -415,7 +411,7 @@ const projects: IProject[] = [
 				color: 'pink-text-gradient',
 			},
 		],
-		image: define_limit,
+		image: '/projects/define-limit.png',
 		source_code_link: 'https://github.com/Wo0zZ1/define-limit',
 		site_link: 'https://define-limit.vercel.app/',
 	},
@@ -464,6 +460,6 @@ const testimonials: ITestimonial[] = [
 	},
 ]
 
-export { navLinks, services, technologies, experiences, testimonials, projects }
+export { navLinks, services, technologies, experiences, testimonials, projects, github }
 
 export type { INavLink, IService, IExperience, ITechnology, ITag, IProject, ITestimonial }

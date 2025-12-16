@@ -1,20 +1,19 @@
 import { FC, memo } from 'react'
 import { Tilt } from 'react-tilt'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 import { SectionWrapper } from '../hocs'
 
-import github from '../assets/github.png'
-
-import { projects } from '../constants'
-import { IProject } from '../constants'
+import { projects, type IProject, github } from '../constants'
 
 import { useLang } from '../hooks'
 
 import { fadeIn, textVariant } from '../utils'
 
 import { styles } from '../styles'
-import { Link } from 'react-router-dom'
+
+import { LazyImage } from './shared'
 
 const ProjectCard: FC<IProject & { index: number }> = memo(
 	({ index, name, description, tags, image, source_code_link, site_link }) => {
@@ -37,10 +36,11 @@ const ProjectCard: FC<IProject & { index: number }> = memo(
 							className='h-full w-full cursor-pointer rounded-2xl '
 							to={site_link}
 							target='_blank'>
-							<img
+							<LazyImage
 								src={image}
 								alt={name}
-								className='h-full w-full rounded-2xl object-cover'
+								className='h-full w-full rounded-2xl'
+								placeholderColor='var(--card-bg)'
 							/>
 						</Link>
 
