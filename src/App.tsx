@@ -8,6 +8,7 @@ import { Main } from './pages'
 
 import './index.scss'
 import './variables.scss'
+import { Toaster } from 'react-hot-toast'
 
 export const LangContext = createContext<ILangContext | undefined>(undefined)
 
@@ -33,6 +34,7 @@ const App: FC = () => {
 		<BrowserRouter>
 			<LangContext.Provider value={{ lang, setLang }}>
 				<ThemeContext.Provider value={{ theme, setTheme }}>
+					<Toaster />
 					<MainLayout>
 						<Main />
 					</MainLayout>

@@ -3,10 +3,7 @@
 		"header": {},
 		"hero": {
 			"hello": ["Hi, I'm", "Max"],
-			"about_me": [
-				"I develop 3D visuals, user",
-				"interfaces and web applications"
-			]
+			"about_me": ["I develop 3D visuals, user", "interfaces and web applications"]
 		},
 		"about": {
 			"introduction": "Introduction",
@@ -38,9 +35,9 @@
 			"q_your_message": "What do you want to say?",
 			"send": "Send",
 			"sending": "Sending...",
-			"errors": {
-				"required_field": "This field is required"
-			}
+			"thank_you_message": "Thank you! I will get back to you as soon as possible",
+			"something_went_wrong": "Something went wrong",
+			"required_field": "This field is required"
 		}
 	},
 	"ru": {
@@ -82,9 +79,9 @@
 			"q_your_message": "Ваше сообщение",
 			"send": "Отправить",
 			"sending": "Отправка...",
-			"errors": {
-				"required_field": "Это поле должно быть заполнено"
-			}
+			"thank_you_message": "Спасибо! Я свяжусь с вами как можно скорее",
+			"something_went_wrong": "Что-то пошло не так",
+			"required_field": "Это поле должно быть заполнено"
 		}
 	}
 }

@@ -2,6 +2,7 @@ import { FC, memo, useCallback, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import toast from 'react-hot-toast'
 
 import { EarthCanvas } from './canvas'
 import { slideIn } from '../utils'
@@ -28,6 +29,18 @@ const Contact: FC = memo(() => {
 		handleSubmit,
 	} = useForm<FormValues>()
 
+	const toastSuccess = useCallback(() => {
+		toast.success(translations[lang].contact.thank_you_message, {
+			position: 'top-center',
+		})
+	}, [lang, translations])
+
+	const toastError = useCallback(() => {
+		toast.error(translations[lang].contact.something_went_wrong, {
+			position: 'top-center',
+		})
+	}, [lang, translations])
+
 	const onSubmit: SubmitHandler<FormValues> = useCallback(
 		form => {
 			setLoading(true)
@@ -42,20 +55,21 @@ const Contact: FC = memo(() => {
 						to_email: import.meta.env.VITE_EMAILJS_EMAIL,
 						message: form.message,
 					},
-					import.meta.env.VITE_EMAILJS_PUBLIC_API,
+					{ publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_API },
 				)
 				.then(() => {
-					setLoading(false)
-					alert('Thank you! I will get back to you as soon as possible')
+					toastSuccess()
 					reset()
 				})
 				.catch(error => {
+					toastError()
+					console.error(error)
+				})
+				.finally(() => {
 					setLoading(false)
-					alert('Something went wrong')
-					console.log(error)
 				})
 		},
-		[setLoading, reset],
+		[setLoading, reset, toastError, toastSuccess],
 	)
 
 	return (
@@ -75,7 +89,7 @@ const Contact: FC = memo(() => {
 						<input
 							type='text'
 							{...register('name', {
-								required: translations[lang].contact.errors.required_field,
+								required: translations[lang].contact.required_field,
 							})}
 							placeholder={translations[lang].contact.q_your_name}
 							className='py-4 px-6 placeholder:text-secondary rounded-lg outline-none font-medium text-text-primary bg-bg-input'
@@ -89,9 +103,9 @@ const Contact: FC = memo(() => {
 						<input
 							type='email'
 							{...register('email', {
-								required: translations[lang].contact.errors.required_field,
+								required: translations[lang].contact.required_field,
 							})}
-							placeholder={translations[lang].contact.q_your_message}
+							placeholder={translations[lang].contact.q_your_email}
 							className='py-4 px-6 placeholder:text-secondary rounded-lg outline-none font-medium text-text-primary bg-bg-input'
 						/>
 						<span className='h-5 mt-1 text-sm text-text-error'>
@@ -105,7 +119,7 @@ const Contact: FC = memo(() => {
 						<textarea
 							rows={3}
 							{...register('message', {
-								required: translations[lang].contact.errors.required_field,
+								required: translations[lang].contact.required_field,
 							})}
 							placeholder={translations[lang].contact.q_your_message}
 							className='py-4 px-6 placeholder:text-secondary rounded-lg outline-none font-medium'
